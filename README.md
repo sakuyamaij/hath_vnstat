@@ -10,13 +10,13 @@
 
 ## Deploy
 
-Replace `/my/hath/data` `/my/hath/dl` `/my/hath/vnstat` `YOUR_CLIENT_KEY` `YOUR_PORT` with yours.
+Replace `/YOUR/HATH/DATA` `/YOUR/HATH/DL` `/YOUR/HATH/VNSTAT` `YOUR_CLIENT_KEY` `YOUR_PORT` with yours.
 
 ### The format of `YOUR_CLIENT_KEY`
 
 You can find your `Client ID#` and `Client Key` [here](https://e-hentai.org/hentaiathome.php)
 
-`"$Client ID"-"$Client Key"` like this: `000000-ABCDEFGHIJKLMN1234OP`
+`"$Client ID"-"$Client Key"` like this: `123456-ABCDEFGHIJKLMN1234OP`
 
 ### About `YOUR_PORT`
 
@@ -27,10 +27,11 @@ https://ehwiki.org/wiki/Technical_Issues#Ports
   ```
   docker pull ghcr.io/sakuyamaij/hathv:latest
   ```
+  中国大陆用户可使用[Docker Proxy](https://dockerproxy.com/)镜像加速
 
 - Run it  
   ```
-  docker run -d --name hath -p YOUR_PORT:YOUR_PORT -v /my/hath/data:/hath/data -v /my/hath/dl:/hath/download -v /my/hath/vnstat:/var/lib/vnstat -e HatH_KEY=YOUR_CLIENT_KEY ghcr.io/sakuyamaij/hathv
+  docker run -d --name hath -p YOUR_PORT:YOUR_PORT -v /YOUR/HATH/DATA:/hath/data -v /YOUR/HATH/DL:/hath/download -v /YOUR/HATH/VNSTAT:/var/lib/vnstat -e HatH_KEY=YOUR_CLIENT_KEY ghcr.io/sakuyamaij/hathv
   ```
 
 - Check vnstat statistics  
